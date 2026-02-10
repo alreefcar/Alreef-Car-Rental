@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مكتب الريف لتأجير السيارات | Al Reef Car Rental</title>
+    <meta name="description" content="الريف لتأجير السيارات في عمّان - أحدث موديلات السيدان والـSUV مع حجز سريع عبر واتساب وخدمة موثوقة طوال الأسبوع.">
+    <meta name="keywords" content="تأجير سيارات عمان, مكتب الريف, حجز سيارات الأردن, Al Reef Car Rental, Toyota Corolla Rental">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://alreefcarrental.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="مكتب الريف لتأجير السيارات | Al Reef Car Rental">
+    <meta property="og:description" content="احجز سيارتك بسهولة من أحدث موديلات 2026-2025 في عمان مع مكتب الريف لتأجير السيارات.">
+    <meta property="og:image" content="https://i.ibb.co/G35fZKJG/55-3597445095662.png">
+    <meta property="og:locale" content="ar_JO">
+    <meta property="og:url" content="https://alreefcarrental.com/">
+    <meta name="twitter:card" content="summary_large_image">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,9 +83,10 @@
         }
 
         .logo-img {
-            height: 60px;
+            height: 95px;
             width: auto;
             object-fit: contain;
+         margin-left: 300px;
         }
 
         html { scroll-behavior: smooth; }
@@ -98,6 +110,20 @@
         /* Lang Switch Transition */
         [data-lang] { transition: all 0.2s ease; }
     </style>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "CarRental",
+            "name": "Al Reef Car Rental",
+            "url": "https://alreefcarrental.com/",
+            "telephone": "+962799819828",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Amman",
+                "addressCountry": "JO"
+            }
+        }
+    </script>
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans">
 
@@ -105,17 +131,20 @@
     <nav class="glass-nav shadow-lg fixed w-full z-40 border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-24 items-center">
-                <div class="flex items-center gap-4">
-                    <img src="https://i.ibb.co/G35fZKJG/55-3597445095662.png" alt="شعار الريف" class="logo-img">
-                    
-                    <!-- Language Switcher Desktop -->
-                    <div class="hidden md:flex bg-slate-100 rounded-full p-1 border border-slate-200">
+                
+                <div class="flex items-center">
+                    <img src="https://i.ibb.co/G35fZKJG/55-3597445095662.png" 
+                         alt="شعار الريف" 
+                         class="logo-img transition-all duration-300 transform ms-4 md:ms-8" 
+                         style="width: auto; height: 175px;">
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8 space-x-reverse">
+                    <div class="flex bg-slate-100 rounded-full p-1 border border-slate-200">
                         <button onclick="setLanguage('ar')" id="btn-ar" class="px-4 py-1 rounded-full text-xs font-bold transition-all bg-brand-primary text-white">العربية</button>
                         <button onclick="setLanguage('en')" id="btn-en" class="px-4 py-1 rounded-full text-xs font-bold transition-all text-slate-500">English</button>
                     </div>
-                </div>
-                
-                <div class="hidden md:flex space-x-8 space-x-reverse items-center">
+
                     <a href="#home" data-i18n="nav_home" class="font-bold text-brand-primary">الرئيسية</a>
                     <a href="#fleet" data-i18n="nav_cars" class="text-slate-700 hover:text-brand-primary font-bold transition-colors">السيارات</a>
                     <a href="#location" data-i18n="nav_location" class="text-slate-700 hover:text-brand-primary font-bold transition-colors">موقعنا</a>
@@ -316,51 +345,171 @@
         </div>
     </section>
 
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-14">
+                <h2 class="text-4xl md:text-5xl font-black mb-4" data-i18n="why_title">لماذا نحن؟</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto" data-i18n="why_desc">نقدّم تجربة تأجير احترافية مبنية على الشفافية والالتزام وجودة الخدمة.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <article class="bg-white p-7 rounded-3xl border border-slate-100 shadow-sm">
+                    <i class="fas fa-shield-halved text-brand-primary text-3xl mb-4"></i>
+                    <h3 class="font-black text-xl mb-2" data-i18n="feature_safe_title">أمان وثقة</h3>
+                    <p class="text-slate-500" data-i18n="feature_safe_desc">سيارات مفحوصة وصيانة دورية قبل كل تسليم.</p>
+                </article>
+                <article class="bg-white p-7 rounded-3xl border border-slate-100 shadow-sm">
+                    <i class="fas fa-bolt text-brand-primary text-3xl mb-4"></i>
+                    <h3 class="font-black text-xl mb-2" data-i18n="feature_fast_title">حجز سريع</h3>
+                    <p class="text-slate-500" data-i18n="feature_fast_desc">إجراءات بسيطة وتحويل مباشر إلى واتساب للتأكيد.</p>
+                </article>
+                <article class="bg-white p-7 rounded-3xl border border-slate-100 shadow-sm">
+                    <i class="fas fa-tags text-brand-primary text-3xl mb-4"></i>
+                    <h3 class="font-black text-xl mb-2" data-i18n="feature_price_title">أسعار تنافسية</h3>
+                    <p class="text-slate-500" data-i18n="feature_price_desc">باقات مرنة تناسب الأفراد والعائلات والرحلات.</p>
+                </article>
+                <article class="bg-white p-7 rounded-3xl border border-slate-100 shadow-sm">
+                    <i class="fas fa-headset text-brand-primary text-3xl mb-4"></i>
+                    <h3 class="font-black text-xl mb-2" data-i18n="feature_support_title">دعم مستمر</h3>
+                    <p class="text-slate-500" data-i18n="feature_support_desc">فريقنا متاح للرد على الاستفسارات ومتابعة الحجوزات.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="reviews" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-14">
+                <h2 class="text-4xl md:text-5xl font-black mb-4" data-i18n="reviews_title">آراء العملاء</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto" data-i18n="reviews_desc">تقييمات حقيقية من عملائنا بعد تجربة التأجير مع مكتب الريف.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <article class="bg-slate-50 border border-slate-100 p-8 rounded-3xl">
+                    <div class="text-amber-400 text-lg mb-3">★★★★★</div>
+                    <p class="text-slate-600 mb-4" data-i18n="review_1_text">تعامل ممتاز وسيارة نظيفة جداً، والإجراءات كانت سريعة وواضحة.</p>
+                    <h3 class="font-black" data-i18n="review_1_name">محمد الخطيب</h3>
+                </article>
+                <article class="bg-slate-50 border border-slate-100 p-8 rounded-3xl">
+                    <div class="text-amber-400 text-lg mb-3">★★★★★</div>
+                    <p class="text-slate-600 mb-4" data-i18n="review_2_text">أفضل مكتب تعاملت معه في عمّان، الالتزام بالمواعيد والأسعار ممتاز.</p>
+                    <h3 class="font-black" data-i18n="review_2_name">سارة النجار</h3>
+                </article>
+                <article class="bg-slate-50 border border-slate-100 p-8 rounded-3xl">
+                    <div class="text-amber-400 text-lg mb-3">★★★★☆</div>
+                    <p class="text-slate-600 mb-4" data-i18n="review_3_text">تجربة موفقة وخدمة عملاء راقية، أنصح بالتجربة خصوصاً للعائلات.</p>
+                    <h3 class="font-black" data-i18n="review_3_name">أحمد العواملة</h3>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms Section -->
+    <section id="terms" class="py-24 bg-slate-50">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-black mb-8 text-center" data-i18n="terms_title">الشروط والأحكام</h2>
+            <div class="bg-white rounded-3xl border border-slate-100 p-8 md:p-10 space-y-5 text-slate-600 leading-8">
+                <p data-i18n="terms_1">1) يشترط وجود رخصة قيادة سارية وهوية أو جواز سفر ساريين وقت الاستلام.</p>
+                <p data-i18n="terms_2">2) يتم تحديد مبلغ التأمين وفق فئة السيارة ويُعاد حسب سياسة الفحص عند التسليم.</p>
+                <p data-i18n="terms_3">3) الالتزام بمواعيد التسليم والاستلام لتجنب أي رسوم إضافية وفق العقد.</p>
+                <p data-i18n="terms_4">4) يتحمل المستأجر المخالفات المرورية وأي أضرار ناتجة عن سوء الاستخدام.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-black mb-10 text-center" data-i18n="faq_title">الأسئلة الشائعة</h2>
+            <div class="space-y-4" id="faq-list">
+                <details class="bg-slate-50 border border-slate-200 rounded-2xl p-5" open>
+                    <summary class="font-black cursor-pointer" data-i18n="faq_q1">ما هي المستندات المطلوبة للتأجير؟</summary>
+                    <p class="mt-3 text-slate-600" data-i18n="faq_a1">رخصة قيادة سارية، وهوية شخصية أو جواز سفر، ووسيلة تواصل فعالة.</p>
+                </details>
+                <details class="bg-slate-50 border border-slate-200 rounded-2xl p-5">
+                    <summary class="font-black cursor-pointer" data-i18n="faq_q2">هل يمكن الحجز والاستلام في نفس اليوم؟</summary>
+                    <p class="mt-3 text-slate-600" data-i18n="faq_a2">نعم، حسب توفر السيارات. تواصل معنا مبكراً لضمان أفضل خيارات.</p>
+                </details>
+                <details class="bg-slate-50 border border-slate-200 rounded-2xl p-5">
+                    <summary class="font-black cursor-pointer" data-i18n="faq_q3">هل يوجد دعم أثناء فترة التأجير؟</summary>
+                    <p class="mt-3 text-slate-600" data-i18n="faq_a3">بالتأكيد، فريقنا متاح لمساعدتك ومتابعة أي استفسار طوال فترة العقد.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legal Pages Section -->
+    <section id="legal-pages" class="py-24 bg-slate-50">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-black mb-6 text-center" data-i18n="legal_title">صفحات قانونية</h2>
+            <p class="text-center text-slate-500 mb-10" data-i18n="legal_desc">يمكنك مراجعة الصفحات القانونية التالية لمعرفة تفاصيل الخصوصية والاستخدام.</p>
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+              <!--  <a href="#privacy-policy" class="bg-white p-6 rounded-2xl border border-slate-200 hover:border-brand-primary transition-colors">
+                   <h3 class="font-black text-xl mb-2" data-i18n="privacy_title">سياسة الخصوصية</h3>
+                    <p class="text-slate-500" data-i18n="privacy_short">كيف نقوم بجمع واستخدام بيانات التواصل والحجز.</p>
+                </a>-->
+               <!-- <a href="#refund-policy" class="bg-white p-6 rounded-2xl border border-slate-200 hover:border-brand-primary transition-colors">
+                    <h3 class="font-black text-xl mb-2" data-i18n="refund_title">سياسة الإلغاء والاسترداد</h3>
+                    <p class="text-slate-500" data-i18n="refund_short">الشروط المرتبطة بتعديل الحجز أو إلغائه.</p>
+                </a>-->
+            </div>
+            <div id="privacy-policy" class="bg-white rounded-2xl border border-slate-200 p-6 mb-4">
+                <h3 class="font-black text-2xl mb-3" data-i18n="privacy_title">سياسة الخصوصية</h3>
+                <p class="text-slate-600" data-i18n="privacy_full">نستخدم بياناتك فقط لأغراض التواصل حول الحجز وتقديم الخدمة، ولا يتم مشاركة المعلومات مع طرف ثالث خارج متطلبات تشغيل الخدمة.</p>
+            </div>
+           <div id="refund-policy" class="bg-white rounded-2xl border border-slate-200 p-6">
+                <h3 class="font-black text-2xl mb-3" data-i18n="refund_title">سياسة الإلغاء والاسترداد</h3>
+                <p class="text-slate-600" data-i18n="refund_full">يمكن تعديل أو إلغاء الحجز وفق توقيت الإشعار وحالة السيارة، وقد تُطبق رسوم إدارية في بعض الحالات بحسب العقد.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Booking Modal -->
     <div id="bookingModal" class="fixed inset-0 z-[60] hidden flex items-center justify-center p-4">
-        <!-- Overlay -->
-        <div onclick="closeBookingModal()" class="absolute inset-0 bg-black/80 backdrop-blur-sm modal-overlay"></div>
+    <div onclick="closeBookingModal()" class="absolute inset-0 bg-black/80 backdrop-blur-sm modal-overlay"></div>
+    
+    <div class="relative bg-white w-full max-w-lg rounded-[2.5rem] shadow-2xl overflow-hidden modal-content translate-y-10">
+        <div class="bg-brand-primary p-6 text-white text-center">
+            <h3 class="text-2xl font-black" data-i18n="modal_title">طلب حجز سيارة</h3>
+            <p class="text-orange-100 text-sm mt-1" data-i18n="modal_subtitle">يرجى تعبئة البيانات وسيتم تحويلك للواتساب</p>
+        </div>
         
-        <!-- Modal Body -->
-        <div class="relative bg-white w-full max-w-lg rounded-[2.5rem] shadow-2xl overflow-hidden modal-content translate-y-10">
-            <div class="bg-brand-primary p-6 text-white text-center">
-                <h3 class="text-2xl font-black" data-i18n="modal_title">طلب حجز سيارة</h3>
-                <p class="text-orange-100 text-sm mt-1" data-i18n="modal_subtitle">يرجى تعبئة البيانات وسيتم تحويلك للواتساب</p>
+        <form id="whatsappForm" class="p-8 space-y-5" onsubmit="sendToWhatsapp(event)">
+            <input type="hidden" id="selectedCar" value="">
+            
+            <div>
+                <label class="block text-sm font-bold text-slate-700 mb-2" data-i18n="label_name">الاسم بالكامل</label>
+                <input type="text" id="userName" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-primary" placeholder="..." data-placeholder="placeholder_name">
             </div>
             
-            <form id="whatsappForm" class="p-8 space-y-5" onsubmit="sendToWhatsapp(event)">
-                <input type="hidden" id="selectedCar" value="">
-                
+            <div class="grid grid-cols-2 gap-4">
                 <div>
-                    <label class="block text-sm font-bold text-slate-700 mb-2" data-i18n="label_name">الاسم بالكامل</label>
-                    <input type="text" id="userName" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-primary" placeholder="..." data-placeholder="placeholder_name">
+                    <label class="block text-sm font-bold text-slate-700 mb-2" data-i18n="label_pickup">تاريخ الاستلام</label>
+                    <input type="date" id="startDate" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-primary text-sm">
                 </div>
-                
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2" data-i18n="label_pickup">تاريخ الاستلام</label>
-                        <input type="date" id="startDate" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-primary text-sm">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2" data-i18n="label_dropoff">تاريخ التسليم</label>
-                        <input type="date" id="endDate" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-primary text-sm">
-                    </div>
-                </div>
-
                 <div>
-                    <label class="block text-sm font-bold text-slate-700 mb-2" data-i18n="label_notes">ملاحظات إضافية</label>
-                    <textarea id="notes" rows="2" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-primary" placeholder="..." data-placeholder="placeholder_notes"></textarea>
+                    <label class="block text-sm font-bold text-slate-700 mb-2" data-i18n="label_dropoff">تاريخ التسليم</label>
+                    <input type="date" id="endDate" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-primary text-sm">
                 </div>
+            </div>
 
-                <div class="pt-2">
-                    <button type="submit" class="w-full bg-green-600 text-white font-black py-4 rounded-2xl hover:bg-green-700 transition-all flex items-center justify-center gap-3 shadow-lg shadow-green-200">
-                        <span data-i18n="btn_submit_whatsapp">إرسال الطلب عبر واتساب</span> <i class="fab fa-whatsapp text-xl"></i>
-                    </button>
-                    <button type="button" onclick="closeBookingModal()" class="w-full mt-3 text-slate-400 text-sm font-bold hover:text-slate-600" data-i18n="btn_cancel">إلغاء</button>
-                </div>
-            </form>
-        </div>
+            <div>
+                <label class="block text-sm font-bold text-slate-700 mb-2" data-i18n="label_notes">ملاحظات إضافية</label>
+                <textarea id="notes" rows="2" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-primary" placeholder="..." data-placeholder="placeholder_notes"></textarea>
+            </div>
+
+            <div class="pt-2">
+                <button type="submit" class="w-full bg-green-600 text-white font-black py-4 rounded-2xl hover:bg-green-700 transition-all flex items-center justify-center gap-3 shadow-lg shadow-green-200">
+                    <span data-i18n="btn_submit_whatsapp">إرسال الطلب عبر واتساب</span>
+                    <i class="fab fa-whatsapp text-xl"></i>
+                </button>
+                <button type="button" onclick="closeBookingModal()" class="w-full mt-3 text-slate-400 text-sm font-bold hover:text-slate-600" data-i18n="btn_cancel">إلغاء</button>
+            </div>
+        </form>
     </div>
+</div>
+
 
     <!-- Map & Contact Section -->
     <section id="location" class="py-24 bg-white overflow-hidden">
@@ -406,13 +555,13 @@
     <footer class="bg-black text-white py-20">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <div class="flex flex-col items-center mb-12">
-                <img src="https://i.ibb.co/G35fZKJG/55-3597445095662.png" alt="Logo" class="logo-img grayscale brightness-200 invert mb-6">
+                <img src="https://i.ibb.co/G35fZKJG/55-3597445095662.png" alt="Logo" style="width: auto;height: 100px;">
                 <p class="text-slate-400 max-w-lg mx-auto leading-relaxed text-sm" data-i18n="footer_desc">الريف لتأجير السيارات - الاسم الأبرز في الأردن لخدمات تأجير السيارات السياحية بجميع فئاتها.</p>
             </div>
             
             <div class="flex justify-center gap-10 mb-12">
-                <a href="#" class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-2xl hover:bg-brand-primary hover:text-white transition-all"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-2xl hover:bg-brand-primary hover:text-white transition-all"><i class="fab fa-instagram"></i></a>
+                <a href="https://web.facebook.com/profile.php?id=100024924920062" class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-2xl hover:bg-brand-primary hover:text-white transition-all"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/alreefcars.jo/" class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-2xl hover:bg-brand-primary hover:text-white transition-all"><i class="fab fa-instagram"></i></a>
             </div>
             
             <div class="w-full h-px bg-white/10 mb-8"></div>
@@ -482,7 +631,45 @@
                 info_loc_desc: "الأردن-عمان-الشميساني",
                 info_phone_title: "اتصل بنا مباشرة",
                 footer_desc: "الريف لتأجير السيارات - الاسم الأبرز في الأردن لخدمات تأجير السيارات السياحية بجميع فئاتها.",
-                btn_call: "اتصل بنا"
+                btn_call: "اتصل بنا",
+                why_title: "لماذا نحن؟",
+                why_desc: "نقدّم تجربة تأجير احترافية مبنية على الشفافية والالتزام وجودة الخدمة.",
+                feature_safe_title: "أمان وثقة",
+                feature_safe_desc: "سيارات مفحوصة وصيانة دورية قبل كل تسليم.",
+                feature_fast_title: "حجز سريع",
+                feature_fast_desc: "إجراءات بسيطة وتحويل مباشر إلى واتساب للتأكيد.",
+                feature_price_title: "أسعار تنافسية",
+                feature_price_desc: "باقات مرنة تناسب الأفراد والعائلات والرحلات.",
+                feature_support_title: "دعم مستمر",
+                feature_support_desc: "فريقنا متاح للرد على الاستفسارات ومتابعة الحجوزات.",
+                reviews_title: "آراء العملاء",
+                reviews_desc: "تقييمات حقيقية من عملائنا بعد تجربة التأجير مع مكتب الريف.",
+                review_1_text: "تعامل ممتاز وسيارة نظيفة جداً، والإجراءات كانت سريعة وواضحة.",
+                review_1_name: "محمد الخطيب",
+                review_2_text: "أفضل مكتب تعاملت معه في عمّان، الالتزام بالمواعيد والأسعار ممتاز.",
+                review_2_name: "سارة النجار",
+                review_3_text: "تجربة موفقة وخدمة عملاء راقية، أنصح بالتجربة خصوصاً للعائلات.",
+                review_3_name: "أحمد العواملة",
+                terms_title: "الشروط والأحكام",
+                terms_1: "1) يشترط وجود رخصة قيادة سارية وهوية أو جواز سفر ساريين وقت الاستلام.",
+                terms_2: "2) يتم تحديد مبلغ التأمين وفق فئة السيارة ويُعاد حسب سياسة الفحص عند التسليم.",
+                terms_3: "3) الالتزام بمواعيد التسليم والاستلام لتجنب أي رسوم إضافية وفق العقد.",
+                terms_4: "4) يتحمل المستأجر المخالفات المرورية وأي أضرار ناتجة عن سوء الاستخدام.",
+                faq_title: "الأسئلة الشائعة",
+                faq_q1: "ما هي المستندات المطلوبة للتأجير؟",
+                faq_a1: "رخصة قيادة سارية، وهوية شخصية أو جواز سفر، ووسيلة تواصل فعالة.",
+                faq_q2: "هل يمكن الحجز والاستلام في نفس اليوم؟",
+                faq_a2: "نعم، حسب توفر السيارات. تواصل معنا مبكراً لضمان أفضل خيارات.",
+                faq_q3: "هل يوجد دعم أثناء فترة التأجير؟",
+                faq_a3: "بالتأكيد، فريقنا متاح لمساعدتك ومتابعة أي استفسار طوال فترة العقد.",
+                legal_title: "صفحات قانونية",
+                legal_desc: "يمكنك مراجعة الصفحات القانونية التالية لمعرفة تفاصيل الخصوصية والاستخدام.",
+                privacy_title: "سياسة الخصوصية",
+                privacy_short: "كيف نقوم بجمع واستخدام بيانات التواصل والحجز.",
+                privacy_full: "نستخدم بياناتك فقط لأغراض التواصل حول الحجز وتقديم الخدمة، ولا يتم مشاركة المعلومات مع طرف ثالث خارج متطلبات تشغيل الخدمة.",
+                refund_title: "سياسة الإلغاء والاسترداد",
+                refund_short: "الشروط المرتبطة بتعديل الحجز أو إلغائه.",
+                refund_full: "يمكن تعديل أو إلغاء الحجز وفق توقيت الإشعار وحالة السيارة، وقد تُطبق رسوم إدارية في بعض الحالات بحسب العقد."
             },
             en: {
                 nav_home: "Home",
@@ -535,7 +722,45 @@
                 info_loc_desc: "Jordan - Amman-Al Shmeisani ",
                 info_phone_title: "Call Us Directly",
                 footer_desc: "Al Reef Car Rental - The most prominent name in Jordan for tourist car rental services of all categories.",
-                btn_call: "Call Us"
+                btn_call: "Call Us",
+                why_title: "Why Us?",
+                why_desc: "We offer a professional rental experience built on transparency, commitment, and quality service.",
+                feature_safe_title: "Safety & Trust",
+                feature_safe_desc: "Inspected vehicles with routine maintenance before every handover.",
+                feature_fast_title: "Fast Booking",
+                feature_fast_desc: "Simple steps and direct WhatsApp confirmation.",
+                feature_price_title: "Competitive Prices",
+                feature_price_desc: "Flexible packages for individuals, families, and trips.",
+                feature_support_title: "Continuous Support",
+                feature_support_desc: "Our team is available to answer inquiries and follow up bookings.",
+                reviews_title: "Customer Reviews",
+                reviews_desc: "Real ratings from customers after renting with Al Reef.",
+                review_1_text: "Excellent service and very clean car. The process was quick and clear.",
+                review_1_name: "Mohammad Al-Khatib",
+                review_2_text: "Best office I dealt with in Amman. Great punctuality and pricing.",
+                review_2_name: "Sara Al-Najjar",
+                review_3_text: "Great experience and classy customer support. Highly recommended for families.",
+                review_3_name: "Ahmad Al-Awamleh",
+                terms_title: "Terms & Conditions",
+                terms_1: "1) A valid driving license and valid ID/passport are required at pickup.",
+                terms_2: "2) Security deposit depends on vehicle category and is returned per inspection policy.",
+                terms_3: "3) Pickup and drop-off timings must be respected to avoid additional charges.",
+                terms_4: "4) The renter is responsible for traffic violations and misuse-related damages.",
+                faq_title: "Frequently Asked Questions",
+                faq_q1: "What documents are required for rental?",
+                faq_a1: "A valid driving license, ID or passport, and an active contact method.",
+                faq_q2: "Can I book and receive the car on the same day?",
+                faq_a2: "Yes, depending on availability. Contact us early for best options.",
+                faq_q3: "Do you provide support during the rental period?",
+                faq_a3: "Absolutely. Our team is available to assist you throughout the contract period.",
+                legal_title: "Legal Pages",
+                legal_desc: "Review the following legal pages for privacy and usage details.",
+                privacy_title: "Privacy Policy",
+                privacy_short: "How we collect and use booking/contact data.",
+                privacy_full: "We only use your data for booking communication and service delivery; no third-party sharing beyond operational needs.",
+                refund_title: "Cancellation & Refund Policy",
+                refund_short: "Terms related to booking amendments or cancellations.",
+                refund_full: "Bookings can be modified or canceled depending on notice timing and car status; administrative fees may apply based on contract terms."
             }
         };
 
@@ -665,5 +890,27 @@
             closeBookingModal();
         }
     </script>
+    
+ <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const minDate = today.toISOString().split('T')[0];
+
+    const startDate = document.getElementById('startDate');
+    const endDate = document.getElementById('endDate');
+
+    startDate.min = minDate;
+    endDate.min = minDate;
+
+    startDate.addEventListener('change', () => {
+        endDate.min = startDate.value;
+        if (endDate.value && endDate.value < startDate.value) {
+            endDate.value = startDate.value;
+        }
+    });
+});
+</script>
+
 </body>
 </html>
