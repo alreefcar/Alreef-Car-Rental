@@ -128,39 +128,96 @@
 <body class="bg-slate-50 text-slate-900 font-sans">
 
     <!-- Header & Navigation -->
-    <nav class="glass-nav shadow-lg fixed w-full z-40 border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-24 items-center">
-                
-                <div class="flex items-center">
-                    <img src="https://i.ibb.co/G35fZKJG/55-3597445095662.png" 
-                         alt="شعار الريف" 
-                         class="logo-img transition-all duration-300 transform ms-4 md:ms-8" 
-                         style="width: auto; height: 175px;">
-                </div>
-                
-                <div class="hidden md:flex items-center space-x-8 space-x-reverse">
-                    <div class="flex bg-slate-100 rounded-full p-1 border border-slate-200">
-                        <button onclick="setLanguage('ar')" id="btn-ar" class="px-4 py-1 rounded-full text-xs font-bold transition-all bg-brand-primary text-white">العربية</button>
-                        <button onclick="setLanguage('en')" id="btn-en" class="px-4 py-1 rounded-full text-xs font-bold transition-all text-slate-500">English</button>
-                    </div>
+  <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتب الريف لتأجير السيارات | Al Reef Car Rental</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { dark: '#000000', primary: '#f97316', accent: '#ffffff', light: '#f8fafc' }
+                    },
+                    fontFamily: { sans: ['Cairo', 'Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+       
+        .hero-bg { background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1470&auto=format&fit=crop'); background-size: cover; background-position: center; }
+        .car-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .car-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
+        .glass-nav { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); }
+        .car-image-container { height: 220px; display: flex; align-items: center; justify-content: center; background: #fff; padding: 1rem; }
+        .car-image-container img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        html { scroll-behavior: smooth; }
+        .active-filter { background-color: #f97316 !important; color: white !important; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans">
 
-                    <a href="#home" data-i18n="nav_home" class="font-bold text-brand-primary">الرئيسية</a>
-                    <a href="#fleet" data-i18n="nav_cars" class="text-slate-700 hover:text-brand-primary font-bold transition-colors">السيارات</a>
-                    <a href="#location" data-i18n="nav_location" class="text-slate-700 hover:text-brand-primary font-bold transition-colors">موقعنا</a>
-                    <button onclick="openBookingModal('حجز عام')" class="bg-brand-primary text-white px-8 py-3 rounded-xl font-bold hover:bg-orange-600 flex items-center gap-2 transition-all shadow-md shadow-orange-200">
-                        <i class="fab fa-whatsapp text-xl"></i> <span data-i18n="btn_book_now">احجز الآن</span>
+    <nav class="glass-nav shadow-lg fixed w-full z-50 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <button id="menu-toggle-btn" class="bg-slate-50 hover:bg-orange-100 text-slate-700 p-3 rounded-xl transition-all duration-300 border border-slate-200 group">
+                        <i class="fas fa-bars text-xl group-hover:scale-110 transition-transform"></i>
+                        <span class="ms-2 font-bold hidden md:inline-block text-sm" data-i18n="nav_menu">القائمة</span>
                     </button>
                 </div>
-
-                <div class="md:hidden flex items-center gap-4">
-                    <button onclick="toggleMobileLang()" class="bg-slate-100 px-3 py-1 rounded-lg text-xs font-bold text-slate-700 border border-slate-200" id="mobile-lang-btn">EN</button>
-                    <a href="tel:00962799819828" class="text-brand-primary text-2xl"><i class="fas fa-phone-alt"></i></a>
+                <div class="absolute left-1/2 transform -translate-x-1/2">
+                    <img src="https://i.ibb.co/G35fZKJG/55-3597445095662.png" alt="Al Reef Logo" class="h-16 md:h-24 w-auto object-contain">
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="flex bg-slate-100 rounded-lg p-1 border border-slate-200 h-10 items-center me-2">
+                        <button onclick="setLanguage('ar')" id="btn-ar-nav" class="px-3 py-1 rounded-md text-xs font-bold transition-all">AR</button>
+                        <button onclick="setLanguage('en')" id="btn-en-nav" class="px-3 py-1 rounded-md text-xs font-bold transition-all">EN</button>
+                    </div>
+                    <a href="tel:00962799819828" class="bg-brand-primary text-white h-10 w-10 flex items-center justify-center rounded-lg hover:bg-orange-600 transition-all shadow-md">
+                        <i class="fas fa-phone-alt text-sm"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </nav>
 
+    <div id="side-drawer" class="fixed inset-0 z-[60] invisible">
+        <div id="drawer-overlay" class="absolute inset-0 bg-black/50 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
+        <div id="drawer-content" class="absolute right-0 top-0 h-full w-80 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out py-8 px-6">
+            <div class="flex justify-between items-center mb-10">
+                <h2 class="text-xl font-black text-slate-800" data-i18n="nav_menu">القائمة</h2>
+                <button id="close-drawer" class="text-slate-400 hover:text-brand-primary">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <nav class="space-y-4">
+                <a href="#home" class="drawer-link flex items-center p-4 rounded-xl font-bold text-slate-700 hover:bg-orange-50 hover:text-brand-primary transition-all">
+                    <i class="fas fa-home me-4"></i> <span data-i18n="nav_home">الرئيسية</span>
+                </a>
+                <a href="#fleet" class="drawer-link flex items-center p-4 rounded-xl font-bold text-slate-700 hover:bg-orange-50 hover:text-brand-primary transition-all">
+                    <i class="fas fa-car me-4"></i> <span data-i18n="nav_cars">السيارات</span>
+                </a>
+                <a href="ServersPage.html" class="drawer-link flex items-center p-4 rounded-xl font-bold text-slate-700 hover:bg-orange-50 hover:text-brand-primary transition-all">
+                    <i class="fas fa-concierge-bell me-4"></i> <span data-i18n="nav_services">الخدمات السياحية</span>
+                </a>
+                <a href="#location" class="drawer-link flex items-center p-4 rounded-xl font-bold text-slate-700 hover:bg-orange-50 hover:text-brand-primary transition-all">
+                    <i class="fas fa-map-marker-alt me-4"></i> <span data-i18n="nav_location">موقعنا</span>
+                </a>
+                <hr class="border-slate-100 my-6">
+                <div class="p-4 bg-slate-50 rounded-2xl">
+                    <p class="text-xs text-slate-500 mb-2" data-i18n="contact_title">تواصل معنا</p>
+                    <p class="font-bold text-slate-800 tracking-wider">+962 799 819 828</p>
+                </div>
+            </nav>
+        </div>
+    </div>
     <!-- Hero Section -->
     <section id="home" class="hero-bg min-h-[85vh] flex items-center justify-center text-center px-4 pt-24">
         <div class="max-w-4xl">
@@ -580,238 +637,272 @@
     <script>
         // Translations Data
         const translations = {
-            ar: {
-                nav_home: "الرئيسية",
-                nav_cars: "السيارات",
-                nav_location: "موقعنا",
-                btn_book_now: "احجز الآن",
-                hero_badge: "أفضل خدمة تأجير سيارات في عمان",
-                hero_title_1: "انطلق في رحلتك",
-                hero_title_2: "بثقة وأمان",
-                hero_desc: "أحدث الموديلات 2024-2025 بانتظارك في مكتب الريف، جودة نعتز بها وأسعار تنافسية.",
-                btn_browse: "تصفح أسطولنا",
-                btn_appointment: "احجز موعداً",
-                fleet_title: "اختر سيارتك المفضلة",
-                filter_small: "سيدان صغيرة",
-                filter_large: "سيدان كبيرة",
-                filter_mini: "ميني جيب",
-                filter_family: "جيب عائلي 7 مقاعد",
-                car_corolla_blue: "تيوتا كورولا (أزرق)",
-                car_corolla_blue_desc: "أداء هجين مذهل واستهلاك وقود قليل جداً.",
-                car_corolla_red: "تيوتا كورولا (احمر)",
-                car_corolla_red_desc: "إطلالة جذابة باللون الأحمر وموديل 2026 الجديد كلياً، راحة وأمان على الطريقً.",
-                car_corolla_black: "تيوتا كورولا (أسود)",
-                car_corolla_black_desc: "اللون الملكي مع كافة الإضافات التكنولوجية الحديثة.",
-                car_corolla_grey: "تيوتا كورولا (رمادي)",
-                car_corolla_grey_desc: "الموديل الجديد 2026 باللون الرمادي الأنيق، الخيار المثالي للعمل والتنقل.",
-                car_camry_black: "تيوتا كامري (أسود)",
-                car_camry_black_desc: "فخامة لا تضاهى ومساحة داخلية واسعة جداً.",
-                car_camry_grey: "تيوتا كامري  (رمادي)",
-                car_camry_grey_desc: "إطلالة عصرية باللون الرمادي المميز، توفر لك الراحة والهدوء أثناء القيادة.", 
-                car_trax_black: "شفروليه تراكس (أسود)",
-                car_trax_black_desc: "ميني جيب باللون الأسود، يجمع بين القوة والحجم المثالي للمدينة.",
-                car_trax_grey: "شفروليه تراكس (رمادي)",
-                car_trax_grey_desc: "تصميم ميني جيب أنيق باللون السكني، ارتفاع ممتاز عن الأرض وراحة في القيادة",                
-                car_captiva: "شفروليه كابتيفا العائلية",
-                car_captiva_desc: "تتسع لـ 7 ركاب براحة تامة، مثالية للرحلات الجماعية.",
-                btn_book_it: "احجزها الآن",
-                modal_title: "طلب حجز سيارة",
-                modal_subtitle: "يرجى تعبئة البيانات وسيتم تحويلك للواتساب",
-                label_name: "الاسم بالكامل",
-                placeholder_name: "أدخل اسمك هنا",
-                label_pickup: "تاريخ الاستلام",
-                label_dropoff: "تاريخ التسليم",
-                label_notes: "ملاحظات إضافية",
-                placeholder_notes: "أي طلبات خاصة؟",
-                btn_submit_whatsapp: "إرسال الطلب عبر واتساب",
-                btn_cancel: "إلغاء",
-                contact_title: "تواصل معنا",
-                contact_desc: "نحن نتطلع لخدمتكم. مكتبنا مفتوح طوال أيام الأسبوع لتلبية جميع احتياجاتكم في تأجير السيارات.",
-                info_loc_title: "الموقع",
-                info_loc_desc: "الأردن-عمان-الشميساني",
-                info_phone_title: "اتصل بنا مباشرة",
-                footer_desc: "الريف لتأجير السيارات - الاسم الأبرز في الأردن لخدمات تأجير السيارات السياحية بجميع فئاتها.",
-                btn_call: "اتصل بنا",
-                why_title: "لماذا نحن؟",
-                why_desc: "نقدّم تجربة تأجير احترافية مبنية على الشفافية والالتزام وجودة الخدمة.",
-                feature_safe_title: "أمان وثقة",
-                feature_safe_desc: "سيارات مفحوصة وصيانة دورية قبل كل تسليم.",
-                feature_fast_title: "حجز سريع",
-                feature_fast_desc: "إجراءات بسيطة وتحويل مباشر إلى واتساب للتأكيد.",
-                feature_price_title: "أسعار تنافسية",
-                feature_price_desc: "باقات مرنة تناسب الأفراد والعائلات والرحلات.",
-                feature_support_title: "دعم مستمر",
-                feature_support_desc: "فريقنا متاح للرد على الاستفسارات ومتابعة الحجوزات.",
-                reviews_title: "آراء العملاء",
-                reviews_desc: "تقييمات حقيقية من عملائنا بعد تجربة التأجير مع مكتب الريف.",
-                review_1_text: "تعامل ممتاز وسيارة نظيفة جداً، والإجراءات كانت سريعة وواضحة.",
-                review_1_name: "محمد الخطيب",
-                review_2_text: "أفضل مكتب تعاملت معه في عمّان، الالتزام بالمواعيد والأسعار ممتاز.",
-                review_2_name: "سارة النجار",
-                review_3_text: "تجربة موفقة وخدمة عملاء راقية، أنصح بالتجربة خصوصاً للعائلات.",
-                review_3_name: "أحمد العواملة",
-                terms_title: "الشروط والأحكام",
-                terms_1: "1) يشترط وجود رخصة قيادة سارية وهوية أو جواز سفر ساريين وقت الاستلام.",
-                terms_2: "2) يتم تحديد مبلغ التأمين وفق فئة السيارة ويُعاد حسب سياسة الفحص عند التسليم.",
-                terms_3: "3) الالتزام بمواعيد التسليم والاستلام لتجنب أي رسوم إضافية وفق العقد.",
-                terms_4: "4) يتحمل المستأجر المخالفات المرورية وأي أضرار ناتجة عن سوء الاستخدام.",
-                faq_title: "الأسئلة الشائعة",
-                faq_q1: "ما هي المستندات المطلوبة للتأجير؟",
-                faq_a1: "رخصة قيادة سارية، وهوية شخصية أو جواز سفر، ووسيلة تواصل فعالة.",
-                faq_q2: "هل يمكن الحجز والاستلام في نفس اليوم؟",
-                faq_a2: "نعم، حسب توفر السيارات. تواصل معنا مبكراً لضمان أفضل خيارات.",
-                faq_q3: "هل يوجد دعم أثناء فترة التأجير؟",
-                faq_a3: "بالتأكيد، فريقنا متاح لمساعدتك ومتابعة أي استفسار طوال فترة العقد.",
-                legal_title: "صفحات قانونية",
-                legal_desc: "يمكنك مراجعة الصفحات القانونية التالية لمعرفة تفاصيل الخصوصية والاستخدام.",
-                privacy_title: "سياسة الخصوصية",
-                privacy_short: "كيف نقوم بجمع واستخدام بيانات التواصل والحجز.",
-                privacy_full: "نستخدم بياناتك فقط لأغراض التواصل حول الحجز وتقديم الخدمة، ولا يتم مشاركة المعلومات مع طرف ثالث خارج متطلبات تشغيل الخدمة.",
-                refund_title: "سياسة الإلغاء والاسترداد",
-                refund_short: "الشروط المرتبطة بتعديل الحجز أو إلغائه.",
-                refund_full: "يمكن تعديل أو إلغاء الحجز وفق توقيت الإشعار وحالة السيارة، وقد تُطبق رسوم إدارية في بعض الحالات بحسب العقد."
-            },
-            en: {
-                nav_home: "Home",
-                nav_cars: "Our Fleet",
-                nav_location: "Location",
-                btn_book_now: "Book Now",
-                hero_badge: "Best car rental service in Amman",
-                hero_title_1: "Start Your Journey",
-                hero_title_2: "With Confidence",
-                hero_desc: "The latest 2024-2025 models await you at Al Reef Office. Quality we are proud of and competitive prices.",
-                btn_browse: "Browse Fleet",
-                btn_appointment: "Book Appointment",
-                fleet_title: "Choose Your Favorite Car",
-                filter_small: "Small Sedan",
-                filter_large: "Large Sedan",
-                filter_mini: "Mini Jeep",
-                filter_family: "7-Seater Family Jeep",
-                car_corolla_blue: "Toyota Corolla (Blue)",
-                car_corolla_blue_desc: "Amazing hybrid performance and very low fuel consumption.",
-                car_corolla_red: "Toyota Corolla (red)",
-                car_corolla_red_desc: "Attractive Red look and the all-new 2026 model, comfort and safety on the road.",
-                car_corolla_black: "Toyota Corolla (Black)",
-                car_corolla_black_desc: "The royal color with all modern technological additions.",
-                car_corolla_grey: "Toyota Corolla (Grey)",
-                car_corolla_grey_desc: "New 2026 model in elegant Grey, ideal choice for work and commuting.",                
-                car_camry_black: "Toyota Camry (Black)",
-                car_camry_black_desc: "Unmatched luxury and very spacious interior.",
-                car_camry_grey: "Toyota Camry (Grey)", 
-                car_camry_grey_desc: "A modern look in distinctive Grey, providing you with comfort and quiet while driving.",
-                car_captiva: "Chevrolet Captiva Family",
-                car_captiva_desc: "Comfortably accommodates 7 passengers, perfect for group trips.",
-                car_trax_black: "Chevrolet Trax (Black)",
-                car_trax_black_desc: "mini SUV in Black, combining power and perfect size for the city.",  
-                car_trax_grey: "Chevrolet Trax (Grey)",
-                car_trax_grey_desc: "Elegant mini SUV design in Grey, excellent ground clearance and driving comfort.",                
-                btn_book_it: "Book It Now",
-                modal_title: "Car Booking Request",
-                modal_subtitle: "Please fill in the details to proceed to WhatsApp",
-                label_name: "Full Name",
-                placeholder_name: "Enter your name here",
-                label_pickup: "Pick-up Date",
-                label_dropoff: "Drop-off Date",
-                label_notes: "Additional Notes",
-                placeholder_notes: "Any special requests?",
-                btn_submit_whatsapp: "Send Request via WhatsApp",
-                btn_cancel: "Cancel",
-                contact_title: "Contact Us",
-                contact_desc: "We look forward to serving you. Our office is open 7 days a week for all your rental needs.",
-                info_loc_title: "Location",
-                info_loc_desc: "Jordan - Amman-Al Shmeisani ",
-                info_phone_title: "Call Us Directly",
-                footer_desc: "Al Reef Car Rental - The most prominent name in Jordan for tourist car rental services of all categories.",
-                btn_call: "Call Us",
-                why_title: "Why Us?",
-                why_desc: "We offer a professional rental experience built on transparency, commitment, and quality service.",
-                feature_safe_title: "Safety & Trust",
-                feature_safe_desc: "Inspected vehicles with routine maintenance before every handover.",
-                feature_fast_title: "Fast Booking",
-                feature_fast_desc: "Simple steps and direct WhatsApp confirmation.",
-                feature_price_title: "Competitive Prices",
-                feature_price_desc: "Flexible packages for individuals, families, and trips.",
-                feature_support_title: "Continuous Support",
-                feature_support_desc: "Our team is available to answer inquiries and follow up bookings.",
-                reviews_title: "Customer Reviews",
-                reviews_desc: "Real ratings from customers after renting with Al Reef.",
-                review_1_text: "Excellent service and very clean car. The process was quick and clear.",
-                review_1_name: "Mohammad Al-Khatib",
-                review_2_text: "Best office I dealt with in Amman. Great punctuality and pricing.",
-                review_2_name: "Sara Al-Najjar",
-                review_3_text: "Great experience and classy customer support. Highly recommended for families.",
-                review_3_name: "Ahmad Al-Awamleh",
-                terms_title: "Terms & Conditions",
-                terms_1: "1) A valid driving license and valid ID/passport are required at pickup.",
-                terms_2: "2) Security deposit depends on vehicle category and is returned per inspection policy.",
-                terms_3: "3) Pickup and drop-off timings must be respected to avoid additional charges.",
-                terms_4: "4) The renter is responsible for traffic violations and misuse-related damages.",
-                faq_title: "Frequently Asked Questions",
-                faq_q1: "What documents are required for rental?",
-                faq_a1: "A valid driving license, ID or passport, and an active contact method.",
-                faq_q2: "Can I book and receive the car on the same day?",
-                faq_a2: "Yes, depending on availability. Contact us early for best options.",
-                faq_q3: "Do you provide support during the rental period?",
-                faq_a3: "Absolutely. Our team is available to assist you throughout the contract period.",
-                legal_title: "Legal Pages",
-                legal_desc: "Review the following legal pages for privacy and usage details.",
-                privacy_title: "Privacy Policy",
-                privacy_short: "How we collect and use booking/contact data.",
-                privacy_full: "We only use your data for booking communication and service delivery; no third-party sharing beyond operational needs.",
-                refund_title: "Cancellation & Refund Policy",
-                refund_short: "Terms related to booking amendments or cancellations.",
-                refund_full: "Bookings can be modified or canceled depending on notice timing and car status; administrative fees may apply based on contract terms."
-            }
-        };
-
-        let currentLang = 'ar';
-
-        function setLanguage(lang) {
-            currentLang = lang;
-            const isRtl = lang === 'ar';
-            
-            // Set Document properties
-            document.documentElement.lang = lang;
-            document.documentElement.dir = isRtl ? 'rtl' : 'ltr';
-            
-            // Update Text content
-            document.querySelectorAll('[data-i18n]').forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                element.textContent = translations[lang][key];
-            });
-
-            // Update Placeholders
-            document.querySelectorAll('[data-placeholder]').forEach(element => {
-                const key = element.getAttribute('data-placeholder');
-                element.placeholder = translations[lang][key];
-            });
-
-            // Update Desktop Buttons UI
-            document.getElementById('btn-ar').className = isRtl ? "px-4 py-1 rounded-full text-xs font-bold transition-all bg-brand-primary text-white" : "px-4 py-1 rounded-full text-xs font-bold transition-all text-slate-500";
-            document.getElementById('btn-en').className = !isRtl ? "px-4 py-1 rounded-full text-xs font-bold transition-all bg-brand-primary text-white" : "px-4 py-1 rounded-full text-xs font-bold transition-all text-slate-500";
-
-            // Update Mobile Button Text
-            document.getElementById('mobile-lang-btn').textContent = isRtl ? "EN" : "AR";
-
-            // Adjust Layout Classes
-            const contactRows = document.querySelectorAll('.contact-row');
-            contactRows.forEach(row => {
-                if(isRtl) {
-                    row.classList.add('flex-row-reverse');
-                } else {
-                    row.classList.remove('flex-row-reverse');
-                }
-            });
-
-            const contactText = document.querySelector('.text-right-auto');
-            if(isRtl) {
-                contactText.classList.remove('text-left');
-                contactText.classList.add('text-right');
-            } else {
-                contactText.classList.remove('text-right');
-                contactText.classList.add('text-left');
-            }
+        ar: {
+            nav_menu: "القائمة",
+            nav_home: "الرئيسية",
+            nav_cars: "السيارات",
+            nav_services: "الخدمات السياحية",
+            nav_location: "موقعنا",
+            btn_book_now: "احجز الآن",
+            hero_badge: "أفضل خدمة تأجير سيارات في عمان",
+            hero_title_1: "انطلق في رحلتك",
+            hero_title_2: "بثقة وأمان",
+            hero_desc: "أحدث الموديلات 2024-2025 بانتظارك في مكتب الريف، جودة نعتز بها وأسعار تنافسية.",
+            btn_browse: "تصفح أسطولنا",
+            btn_appointment: "احجز موعداً",
+            fleet_title: "اختر سيارتك المفضلة",
+            filter_small: "سيدان صغيرة",
+            filter_large: "سيدان كبيرة",
+            filter_mini: "ميني جيب",
+            filter_family: "جيب عائلي 7 مقاعد",
+            car_corolla_blue: "تيوتا كورولا (أزرق)",
+            car_corolla_blue_desc: "أداء هجين مذهل واستهلاك وقود قليل جداً.",
+            car_corolla_red: "تيوتا كورولا (احمر)",
+            car_corolla_red_desc: "إطلالة جذابة باللون الأحمر وموديل 2026 الجديد كلياً، راحة وأمان على الطريقً.",
+            car_corolla_black: "تيوتا كورولا (أسود)",
+            car_corolla_black_desc: "اللون الملكي مع كافة الإضافات التكنولوجية الحديثة.",
+            car_corolla_grey: "تيوتا كورولا (رمادي)",
+            car_corolla_grey_desc: "الموديل الجديد 2026 باللون الرمادي الأنيق، الخيار المثالي للعمل والتنقل.",
+            car_camry_black: "تيوتا كامري (أسود)",
+            car_camry_black_desc: "فخامة لا تضاهى ومساحة داخلية واسعة جداً.",
+            car_camry_grey: "تيوتا كامري (رمادي)",
+            car_camry_grey_desc: "إطلالة عصرية باللون الرمادي المميز، توفر لك الراحة والهدوء أثناء القيادة.",
+            car_trax_black: "شفروليه تراكس (أسود)",
+            car_trax_black_desc: "ميني جيب باللون الأسود، يجمع بين القوة والحجم المثالي للمدينة.",
+            car_trax_grey: "شفروليه تراكس (رمادي)",
+            car_trax_grey_desc: "تصميم ميني جيب أنيق باللون السكني، ارتفاع ممتاز عن الأرض وراحة في القيادة",
+            car_captiva: "شفروليه كابتيفا العائلية",
+            car_captiva_desc: "تتسع لـ 7 ركاب براحة تامة، مثالية للرحلات الجماعية.",
+            btn_book_it: "احجزها الآن",
+            modal_title: "طلب حجز سيارة",
+            modal_subtitle: "يرجى تعبئة البيانات وسيتم تحويلك للواتساب",
+            label_name: "الاسم بالكامل",
+            placeholder_name: "أدخل اسمك هنا",
+            label_pickup: "تاريخ الاستلام",
+            label_dropoff: "تاريخ التسليم",
+            label_notes: "ملاحظات إضافية",
+            placeholder_notes: "أي طلبات خاصة؟",
+            btn_submit_whatsapp: "إرسال الطلب عبر واتساب",
+            btn_cancel: "إلغاء",
+            contact_title: "تواصل معنا",
+            contact_desc: "نحن نتطلع لخدمتكم. مكتبنا مفتوح طوال أيام الأسبوع لتلبية جميع احتياجاتكم في تأجير السيارات.",
+            info_loc_title: "الموقع",
+            info_loc_desc: "الأردن-عمان-الشميساني",
+            info_phone_title: "اتصل بنا مباشرة",
+            footer_desc: "الريف لتأجير السيارات - الاسم الأبرز في الأردن لخدمات تأجير السيارات السياحية بجميع فئاتها.",
+            btn_call: "اتصل بنا",
+            why_title: "لماذا نحن؟",
+            why_desc: "نقدّم تجربة تأجير احترافية مبنية على الشفافية والالتزام وجودة الخدمة.",
+            feature_safe_title: "أمان وثقة",
+            feature_safe_desc: "سيارات مفحوصة وصيانة دورية قبل كل تسليم.",
+            feature_fast_title: "حجز سريع",
+            feature_fast_desc: "إجراءات بسيطة وتحويل مباشر إلى واتساب للتأكيد.",
+            feature_price_title: "أسعار تنافسية",
+            feature_price_desc: "باقات مرنة تناسب الأفراد والعائلات والرحلات.",
+            feature_support_title: "دعم مستمر",
+            feature_support_desc: "فريقنا متاح للرد على الاستفسارات ومتابعة الحجوزات.",
+            reviews_title: "آراء العملاء",
+            reviews_desc: "تقييمات حقيقية من عملائنا بعد تجربة التأجير مع مكتب الريف.",
+            review_1_text: "تعامل ممتاز وسيارة نظيفة جداً، والإجراءات كانت سريعة وواضحة.",
+            review_1_name: "محمد الخطيب",
+            review_2_text: "أفضل مكتب تعاملت معه في عمّان، الالتزام بالمواعيد والأسعار ممتاز.",
+            review_2_name: "سارة النجار",
+            review_3_text: "تجربة موفقة وخدمة عملاء راقية، أنصح بالتجربة خصوصاً للعائلات.",
+            review_3_name: "أحمد العواملة",
+            terms_title: "الشروط والأحكام",
+            terms_1: "1) يشترط وجود رخصة قيادة سارية وهوية أو جواز سفر ساريين وقت الاستلام.",
+            terms_2: "2) يتم تحديد مبلغ التأمين وفق فئة السيارة ويُعاد حسب سياسة الفحص عند التسليم.",
+            terms_3: "3) الالتزام بمواعيد التسليم والاستلام لتجنب أي رسوم إضافية وفق العقد.",
+            terms_4: "4) يتحمل المستأجر المخالفات المرورية وأي أضرار ناتجة عن سوء الاستخدام.",
+            faq_title: "الأسئلة الشائعة",
+            faq_q1: "ما هي المستندات المطلوبة للتأجير؟",
+            faq_a1: "رخصة قيادة سارية، وهوية شخصية أو جواز سفر، ووسيلة تواصل فعالة.",
+            faq_q2: "هل يمكن الحجز والاستلام في نفس اليوم؟",
+            faq_a2: "نعم، حسب توفر السيارات. تواصل معنا مبكراً لضمان أفضل خيارات.",
+            faq_q3: "هل يوجد دعم أثناء فترة التأجير؟",
+            faq_a3: "بالتأكيد، فريقنا متاح لمساعدتك ومتابعة أي استفسار طوال فترة العقد.",
+            legal_title: "صفحات قانونية",
+            legal_desc: "يمكنك مراجعة الصفحات القانونية التالية لمعرفة تفاصيل الخصوصية والاستخدام.",
+            privacy_title: "سياسة الخصوصية",
+            privacy_short: "كيف نقوم بجمع واستخدام بيانات التواصل والحجز.",
+            privacy_full: "نستخدم بياناتك فقط لأغراض التواصل حول الحجز وتقديم الخدمة، ولا يتم مشاركة المعلومات مع طرف ثالث خارج متطلبات تشغيل الخدمة.",
+            refund_title: "سياسة الإلغاء والاسترداد",
+            refund_short: "الشروط المرتبطة بتعديل الحجز أو إلغائه.",
+            refund_full: "يمكن تعديل أو إلغاء الحجز وفق توقيت الإشعار وحالة السيارة، وقد تُطبق رسوم إدارية في بعض الحالات بحسب العقد."
+        },
+        en: {
+            nav_menu: "Menu",
+            nav_home: "Home",
+            nav_cars: "Our Fleet",
+            nav_services: "Tourism Services",
+            nav_location: "Location",
+            btn_book_now: "Book Now",
+            hero_badge: "Best car rental service in Amman",
+            hero_title_1: "Start Your Journey",
+            hero_title_2: "With Confidence",
+            hero_desc: "The latest 2024-2025 models await you at Al Reef Office. Quality we are proud of and competitive prices.",
+            btn_browse: "Browse Fleet",
+            btn_appointment: "Book Appointment",
+            fleet_title: "Choose Your Favorite Car",
+            filter_small: "Small Sedan",
+            filter_large: "Large Sedan",
+            filter_mini: "Mini Jeep",
+            filter_family: "7-Seater Family Jeep",
+            car_corolla_blue: "Toyota Corolla (Blue)",
+            car_corolla_blue_desc: "Amazing hybrid performance and very low fuel consumption.",
+            car_corolla_red: "Toyota Corolla (red)",
+            car_corolla_red_desc: "Attractive Red look and the all-new 2026 model, comfort and safety on the road.",
+            car_corolla_black: "Toyota Corolla (Black)",
+            car_corolla_black_desc: "The royal color with all modern technological additions.",
+            car_corolla_grey: "Toyota Corolla (Grey)",
+            car_corolla_grey_desc: "New 2026 model in elegant Grey, ideal choice for work and commuting.",
+            car_camry_black: "Toyota Camry (Black)",
+            car_camry_black_desc: "Unmatched luxury and very spacious interior.",
+            car_camry_grey: "Toyota Camry (Grey)",
+            car_camry_grey_desc: "A modern look in distinctive Grey, providing you with comfort and quiet while driving.",
+            car_captiva: "Chevrolet Captiva Family",
+            car_captiva_desc: "Comfortably accommodates 7 passengers, perfect for group trips.",
+            car_trax_black: "Chevrolet Trax (Black)",
+            car_trax_black_desc: "mini SUV in Black, combining power and perfect size for the city.",
+            car_trax_grey: "Chevrolet Trax (Grey)",
+            car_trax_grey_desc: "Elegant mini SUV design in Grey, excellent ground clearance and driving comfort.",
+            btn_book_it: "Book It Now",
+            modal_title: "Car Booking Request",
+            modal_subtitle: "Please fill in the details to proceed to WhatsApp",
+            label_name: "Full Name",
+            placeholder_name: "Enter your name here",
+            label_pickup: "Pick-up Date",
+            label_dropoff: "Drop-off Date",
+            label_notes: "Additional Notes",
+            placeholder_notes: "Any special requests?",
+            btn_submit_whatsapp: "Send Request via WhatsApp",
+            btn_cancel: "Cancel",
+            contact_title: "Contact Us",
+            contact_desc: "We look forward to serving you. Our office is open 7 days a week for all your rental needs.",
+            info_loc_title: "Location",
+            info_loc_desc: "Jordan - Amman-Al Shmeisani ",
+            info_phone_title: "Call Us Directly",
+            footer_desc: "Al Reef Car Rental - The most prominent name in Jordan for tourist car rental services of all categories.",
+            btn_call: "Call Us",
+            why_title: "Why Us?",
+            why_desc: "We offer a professional rental experience built on transparency, commitment, and quality service.",
+            feature_safe_title: "Safety & Trust",
+            feature_safe_desc: "Inspected vehicles with routine maintenance before every handover.",
+            feature_fast_title: "Fast Booking",
+            feature_fast_desc: "Simple steps and direct WhatsApp confirmation.",
+            feature_price_title: "Competitive Prices",
+            feature_price_desc: "Flexible packages for individuals, families, and trips.",
+            feature_support_title: "Continuous Support",
+            feature_support_desc: "Our team is available to answer inquiries and follow up bookings.",
+            reviews_title: "Customer Reviews",
+            reviews_desc: "Real ratings from customers after renting with Al Reef.",
+            review_1_text: "Excellent service and very clean car. The process was quick and clear.",
+            review_1_name: "Mohammad Al-Khatib",
+            review_2_text: "Best office I dealt with in Amman. Great punctuality and pricing.",
+            review_2_name: "Sara Al-Najjar",
+            review_3_text: "Great experience and classy customer support. Highly recommended for families.",
+            review_3_name: "Ahmad Al-Awamleh",
+            terms_title: "Terms & Conditions",
+            terms_1: "1) A valid driving license and valid ID/passport are required at pickup.",
+            terms_2: "2) Security deposit depends on vehicle category and is returned per inspection policy.",
+            terms_3: "3) Pickup and drop-off timings must be respected to avoid additional charges.",
+            terms_4: "4) The renter is responsible for traffic violations and misuse-related damages.",
+            faq_title: "Frequently Asked Questions",
+            faq_q1: "What documents are required for rental?",
+            faq_a1: "A valid driving license, ID or passport, and an active contact method.",
+            faq_q2: "Can I book and receive the car on the same day?",
+            faq_a2: "Yes, depending on availability. Contact us early for best options.",
+            faq_q3: "Do you provide support during the rental period?",
+            faq_a3: "Absolutely. Our team is available to assist you throughout the contract period.",
+            legal_title: "Legal Pages",
+            legal_desc: "Review the following legal pages for privacy and usage details.",
+            privacy_title: "Privacy Policy",
+            privacy_short: "How we collect and use booking/contact data.",
+            privacy_full: "We only use your data for booking communication and service delivery; no third-party sharing beyond operational needs.",
+            refund_title: "Cancellation & Refund Policy",
+            refund_short: "Terms related to booking amendments or cancellations.",
+            refund_full: "Bookings can be modified or canceled depending on notice timing and car status; administrative fees may apply based on contract terms."
         }
+    };
+
+    let currentLang = 'ar';
+
+    function setLanguage(lang) {
+        currentLang = lang;
+        const isRtl = lang === 'ar';
+        document.documentElement.lang = lang;
+        document.documentElement.dir = isRtl ? 'rtl' : 'ltr';
+
+        // 1. ترجمة النصوص العادية
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[lang][key]) el.textContent = translations[lang][key];
+        });
+
+        // 2. ترجمة الـ Placeholders
+        document.querySelectorAll('[data-placeholder]').forEach(el => {
+            const key = el.getAttribute('data-placeholder');
+            if (translations[lang][key]) el.placeholder = translations[lang][key];
+        });
+
+        // 3. تحديث أزرار اللغة (UI)
+        const btnAr = document.getElementById('btn-ar-nav');
+        const btnEn = document.getElementById('btn-en-nav');
+        if (isRtl) {
+            btnAr.className = "px-3 py-1 rounded-md text-xs font-bold transition-all bg-brand-primary text-white";
+            btnEn.className = "px-3 py-1 rounded-md text-xs font-bold transition-all text-slate-500 hover:text-brand-primary";
+        } else {
+            btnEn.className = "px-3 py-1 rounded-md text-xs font-bold transition-all bg-brand-primary text-white";
+            btnAr.className = "px-3 py-1 rounded-md text-xs font-bold transition-all text-slate-500 hover:text-brand-primary";
+        }
+
+        // 4. ضبط القائمة الجانبية (خروج من اليمين أو اليسار)
+        const drawerContent = document.getElementById('drawer-content');
+        if (!isRtl) {
+            drawerContent.classList.replace('right-0', 'left-0');
+            drawerContent.classList.replace('translate-x-full', '-translate-x-full');
+            drawerContent.classList.add('text-left');
+        } else {
+            drawerContent.classList.replace('left-0', 'right-0');
+            drawerContent.classList.replace('-translate-x-full', 'translate-x-full');
+            drawerContent.classList.remove('text-left');
+        }
+    }
+
+    // منطق فتح وإغلاق القائمة
+    const menuBtn = document.getElementById('menu-toggle-btn');
+    const sideDrawer = document.getElementById('side-drawer');
+    const drawerOverlay = document.getElementById('drawer-overlay');
+    const drawerContent = document.getElementById('drawer-content');
+    const closeDrawerBtn = document.getElementById('close-drawer');
+
+    function openDrawer() {
+        sideDrawer.classList.remove('invisible');
+        setTimeout(() => {
+            drawerOverlay.classList.replace('opacity-0', 'opacity-100');
+            const isAr = document.documentElement.dir === 'rtl';
+            drawerContent.classList.replace(isAr ? 'translate-x-full' : '-translate-x-full', 'translate-x-0');
+        }, 10);
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeDrawer() {
+        const isAr = document.documentElement.dir === 'rtl';
+        drawerOverlay.classList.replace('opacity-100', 'opacity-0');
+        drawerContent.classList.replace('translate-x-0', isAr ? 'translate-x-full' : '-translate-x-full');
+        setTimeout(() => {
+            sideDrawer.classList.add('invisible');
+            document.body.style.overflow = '';
+        }, 300);
+    }
+
+    menuBtn.onclick = openDrawer;
+    closeDrawerBtn.onclick = closeDrawer;
+    drawerOverlay.onclick = closeDrawer;
+    document.querySelectorAll('.drawer-link').forEach(l => l.onclick = closeDrawer);
+
+    // تشغيل اللغة عند البداية
+    window.onload = () => setLanguage('ar');
 
         function toggleMobileLang() {
             setLanguage(currentLang === 'ar' ? 'en' : 'ar');
@@ -910,6 +1001,37 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+</script>
+<script>
+    const menuBtn = document.getElementById('menu-toggle-btn');
+    const closeBtn = document.getElementById('close-drawer');
+    const sideDrawer = document.getElementById('side-drawer');
+    const drawerOverlay = document.getElementById('drawer-overlay');
+    const drawerContent = document.getElementById('drawer-content');
+    const drawerLinks = document.querySelectorAll('.drawer-link');
+
+    function openDrawer() {
+        sideDrawer.classList.remove('invisible');
+        drawerOverlay.classList.replace('opacity-0', 'opacity-100');
+        drawerContent.classList.replace('translate-x-full', 'translate-x-0');
+        document.body.style.overflow = 'hidden'; // منع السكرول عند فتح القائمة
+    }
+
+    function closeDrawer() {
+        drawerOverlay.classList.replace('opacity-100', 'opacity-0');
+        drawerContent.classList.replace('translate-x-0', 'translate-x-full');
+        setTimeout(() => {
+            sideDrawer.classList.add('invisible');
+            document.body.style.overflow = '';
+        }, 300);
+    }
+
+    menuBtn.addEventListener('click', openDrawer);
+    closeBtn.addEventListener('click', closeDrawer);
+    drawerOverlay.addEventListener('click', closeDrawer);
+    
+    // إغلاق عند الضغط على أي رابط
+    drawerLinks.forEach(link => link.addEventListener('click', closeDrawer));
 </script>
 
 </body>
